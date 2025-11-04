@@ -44,35 +44,41 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.0.1.exe". Based on the logs returned, at `2024-11-08T22:16:47.4484567Z`, an employee on the "threat-hunt-lab" device ran the file `tor-browser-windows-x86_64-portable-14.0.1.exe` from their Downloads folder, using a command that triggered a silent installation.
+Searched the DeviceProcessEvents table for any ProcessCommandLine that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at 2025-10-23T18:52:18.6823948Z, A user named azurelinko executed the installer for the Tor Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
 
 **Query used to locate event:**
 
 ```kql
 
-DeviceProcessEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where ProcessCommandLine contains "tor-browser-windows-x86_64-portable-14.0.1.exe"  
+DeviceProcessEvents
+| where DeviceName == "og-vm-mde9"
+| where ProcessCommandLine contains "tor-browser-windows-x86_64-portable-14.5.8.exe"
 | project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine
 ```
-<img width="1212" alt="image" src="https://github.com/user-attachments/assets/b07ac4b4-9cb3-4834-8fac-9f5f29709d78">
+![Screenshot 2025-11-04 at 5 10 18 PM](https://github.com/user-attachments/assets/fa7c2e22-c6f0-41a2-ab5f-0c30eae046aa)
 
 ---
 
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
-Searched for any indication that user "employee" actually opened the TOR browser. There was evidence that they did open it at `2024-11-08T22:17:21.6357935Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
+Searched the DeviceProcessEvents table for any indication that the user “azurelinko” opened the tor browser. There was evidence that they did open at 2025-10-23T18:53:25.9192101Z
+
+There were several other instances of Firefox.exe (Tor) as well as tor.exe spawned afterwards. 
 
 **Query used to locate events:**
 
 ```kql
-DeviceProcessEvents  
-| where DeviceName == "threat-hunt-lab"  
-| where FileName has_any ("tor.exe", "firefox.exe", "tor-browser.exe")  
-| project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine  
-| order by Timestamp desc
+DeviceProcessEvents
+| where DeviceName == "og-vm-mde9"
+| where FileName has_any ("tor.exe", "firefox.exe", "tor-browser-windows-*.exe")
+| project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine
+| order by Timestamp desc 
 ```
 <img width="1212" alt="image" src="https://github.com/user-attachments/assets/b13707ae-8c2d-4081-a381-2b521d3a0d8f">
+
+![Screenshot 2025-11-04 at 5 12 42 PM](https://github.com/user-attachments/assets/993e6525-7a1b-4065-ae3c-b734766c1a13)
+
+
 
 ---
 
