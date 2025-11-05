@@ -7,7 +7,7 @@
 - Windows 10 Virtual Machines (Microsoft Azure)
 - EDR Platform: Microsoft Defender for Endpoint
 - Kusto Query Language (KQL)
-- Tor Browser
+- TOR Browser
 
 ##  Scenario
 
@@ -44,7 +44,7 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched the `DeviceProcessEvents` table for any `ProcessCommandLine` that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at `2025-10-23T18:52:18.6823948Z`, A user named azurelinko executed the installer `tor-browser-windows-x86_64-portable-14.5.8.exe` for the Tor Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
+Searched the `DeviceProcessEvents` table for any `ProcessCommandLine` that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at `2025-10-23T18:52:18.6823948Z`, A user named azurelinko executed the installer `tor-browser-windows-x86_64-portable-14.5.8.exe` for the TOR Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
 
 **Query used to locate event:**
 
@@ -105,48 +105,48 @@ DeviceNetworkEvents
 
 ## Detailed Chronological Events Timeline
 
-- **`2025-10-23 18:41:40.000Z`:** Tor Browser installer file created (Downloaded). File: tor-browser-windows-x86_64-portable-14.5.8.exe - Path: C:\Users\azurelinko\Downloads\tor-browser-windows-x86_64-portable-14.5.8.exe, SHA256: 42175e455f814e5a691195c92df92695f68bca451af53ae405d7a5129898ad89
-- **2025-10-23 18:52:18.000Z:** Tor Browser installer executed silently. File: tor-browser-windows-x86_64-portable-14.5.8.exe - Command Line: tor-browser-windows-x86_64-portable-14.5.8.exe /S, Path: C:\Users\azurelinko\Downloads\tor-browser-windows-x86_64-portable-14.5.8.exe
-- **2025-10-23 18:53:25.000Z:** Tor Browser (firefox.exe) initial process created/launched by user azurelinko. - Path: C:\Users\azurelinko\Desktop\Tor Browser\Browser\firefox.exe, Command Line: firefox.exe
-- **2025-10-23 18:54:22.000Z:** Tor service process created. File: tor.exe - Path: C:\Users\azurelinko\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe
-- **2025-10-23 18:54:25.000Z:** Tor Browser (firefox.exe) established connection to local Tor control port 9151. - IP: 127.0.0.1:9151
-- **2025-10-23 18:54:46.000Z:** Tor Browser (firefox.exe) established connection to local Tor SOCKS port 9150. - IP: 127.0.0.1:9150
-- **2025-10-23 18:55:14.000Z:** Tor anonymity program (tor.exe) successfully connected to a public Tor relay node. - IP: 177.100.214.111:9001
-- **2025-10-23 18:55:15.000Z:** Tor Browser or service established a secure connection (HTTPS). - IP: 192.184.93.11:443
-- **2025-10-23 18:55:15.000Z:** Tor Browser or service established a secure connection (HTTPS) to an Onion Domain. - IP: 192.184.93.11:443, URL: https://www.j3bffc44.com
-- **2025-10-23 18:55:18.000Z:** Tor Browser or service established a secure connection (HTTPS). - IP: 131.188.40.189:443
-- **2025-10-23 18:55:19.000Z:** Tor Browser or service established a secure connection (HTTPS) to an Onion Domain. - IP: 131.188.40.189:443, URL: https://www.nwdnnh34xcrrczd7.com
-- **2025-10-23 18:55:23.000Z:** Tor anonymity program (tor.exe) successfully connected to a public Tor relay node. - IP: 88.99.27.141:9001
-- **2025-10-23 18:55:23.000Z:** Tor Browser or service established a secure connection (HTTPS). - IP: 212.227.197.40:443
-- **2025-10-23 18:55:23.000Z:** Tor Browser or service established a secure connection (HTTPS) to an Onion Domain. - IP: 212.227.197.40:443, URL: https://www.skza3ntbbi7zra5exgl5.com
-- **2025-10-23 18:55:35.000Z:** Tor Browser (firefox.exe) established connection to local Tor SOCKS port 9150. - IP: 127.0.0.1:9150
-- **2025-10-23 18:57:29.000Z:** Tor Browser (firefox.exe) established connection to local Tor SOCKS port 9150. - IP: 127.0.0.1:9150
-- **2025-10-23 19:21:13.396Z:** File 'tor-shopping-list.txt' created on the desktop (based on threat hunter's finding). - This file creation marks the end of the initial file activity.
-- **2025-10-23 19:24:37.000Z:** Tor service process created. File: tor.exe (Possible relaunch/new session) - Path: C:\Users\azurelinko\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe, Command Line includes +__ControlPort 127.0.0.1:9151
-- **2025-10-23 19:24:40.000Z:** Tor Browser (firefox.exe) established connection to local Tor control port 9151. - IP: 127.0.0.1:9151
+- **`2025-10-23 18:41:40.000Z`:** TOR Browser installer file created and downloaded File: `tor-browser-windows-x86_64-portable-14.5.8.exe` at File Path: `C:\Users\azurelinko\Downloads\tor-browser-windows-x86_64-portable-14.5.8.exe`
+- **`2025-10-23 18:52:18.000Z`:** TOR Browser installer executed silently the File: `tor-browser-windows-x86_64-portable-14.5.8.exe` with the Command Line: `tor-browser-windows-x86_64-portable-14.5.8.exe /S` at the File Path: `C:\Users\azurelinko\Downloads\tor-browser-windows-x86_64-portable-14.5.8.exe`
+- **`2025-10-23 18:53:25.000Z`:** TOR Browser (`firefox.exe`) initial process created and launched by user "azurelinko" at the File Path: `C:\Users\azurelinko\Desktop\Tor Browser\Browser\firefox.exe` with the Command Line: `firefox.exe`
+- **`2025-10-23 18:54:22.000Z`:** TOR service process created the File: `tor.exe` at the File Path: `C:\Users\azurelinko\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe`
+- **`2025-10-23 18:54:25.000Z`:** TOR Browser (`firefox.exe`) established connection to local TOR control port `9151` at IP: `127.0.0.1:9151`
+- **`2025-10-23 18:54:46.000Z`:** TOR Browser (`firefox.exe`) established connection to local TOR SOCKS port `9150` at IP: `127.0.0.1:9150`
+- **`2025-10-23 18:55:14.000Z`:** TOR anonymity program (`tor.exe`) successfully connected to a public TOR relay node at IP: `177.100.214.111:9001`
+- **`2025-10-23 18:55:15.000Z`:** TOR Browser or service established a secure connection (HTTPS) at IP: `192.184.93.11:443`
+- **`2025-10-23 18:55:15.000Z`:** TOR Browser or service established a secure connection (HTTPS) to an Onion Domain at IP: `192.184.93.11:443`, URL: `https://www.j3bffc44.com`
+- **`2025-10-23 18:55:18.000Z`:** TOR Browser or service established a secure connection (HTTPS) at IP: `131.188.40.189:443`
+- **`2025-10-23 18:55:19.000Z`:** TOR Browser or service established a secure connection (HTTPS) to an Onion Domain at IP: `131.188.40.189:443`, URL: `https://www.nwdnnh34xcrrczd7.com`
+- **`2025-10-23 18:55:23.000Z`:** TOR anonymity program (`tor.exe`) successfully connected to a public TOR relay node at IP: `88.99.27.141:9001`
+- **`2025-10-23 18:55:23.000Z`:** TOR Browser or service established a secure connection (HTTPS) at IP: `212.227.197.40:443`
+- **`2025-10-23 18:55:23.000Z`:** TOR Browser or service established a secure connection (HTTPS) to an Onion Domain at IP: `212.227.197.40:443`, URL: `https://www.skza3ntbbi7zra5exgl5.com`
+- **`2025-10-23 18:55:35.000Z`:** TOR Browser (firefox.exe) established connection to local TOR SOCKS port `9150` at IP: `127.0.0.1:9150`
+- **`2025-10-23 18:57:29.000Z`:** TOR Browser (firefox.exe) established connection to local TOR SOCKS port `9150` at IP: `127.0.0.1:9150`
+- **`2025-10-23 19:21:13.396Z`:** File `tor-shopping-list.txt` created on the desktop. This file creation marks the end of the initial file activity.
+- **`2025-10-23 19:24:37.000Z`:** TOR service process created. File: `tor.exe` (Possible relaunch/new session) at File Path: `C:\Users\azurelinko\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe`
+- **`2025-10-23 19:24:40.000Z`:** TOR Browser (`firefox.exe`) established connection to local TOR control port `9151` at IP: `127.0.0.1:9151`
 
 ---
 
 ## Summary of Events
-The threat hunt successfully documented the full lifecycle of Tor Browser usage by the user azurelinko on the device og-vm-mde9 on October 23, 2025.
+The threat hunt successfully documented the full lifecycle of TOR Browser usage by the user "azurelinko" on the device "og-vm-mde9" on October 23, 2025.
 
-- **Installation/File Activity** (18:41Z - 18:52Z): The process began with the download of the portable Tor Browser installer at 18:41:40.000Z. This installer was executed silently (/S flag) at 18:52:18.000Z, leading to the creation of the Tor Browser files on the Desktop.
-- **Execution and Session Start** (18:53Z - 18:55Z): The Tor Browser application (firefox.exe) was launched at 18:53:25Z, followed almost immediately by the Tor service (tor.exe) at 18:54:22Z. The browser component then connected to the local Tor service over the standard control port 9151 and SOCKS port 9150, confirming the application was successfully initiating the Tor connection.
-- **External Tor Network Connection** (18:55Z): The tor.exe process successfully established outgoing connections to public Tor relay nodes on the dedicated Tor communication port 9001 (IPs 177.100.214.111 and 88.99.27.141). This event confirms the user was actively connected to and routing traffic through the Tor network.
-- **Web Activity** (18:55Z): Immediately after connecting to a Tor relay, the user visited at least three different websites over HTTPS (port 443). The URLs, such as https://www.nwdnnh34xcrrczd7.com, are typical of onion-based or Tor-proxied traffic, suggesting the user was accessing sites through the anonymity network.
-- **Anomalous File Creation** (19:21Z): At 19:21:13Z, well into the session, a file named tor-shopping-list.txt was created on the desktop, which is a file of interest identified by the threat hunter.
-- **Second Session** (19:24Z): A second, distinct launch of the Tor service (tor.exe) and subsequent connection by the browser component to the local ports 9151 and 9150 occurred at 19:24:37Z and 19:24:40Z, respectively, indicating a possible relaunch or new browsing session.
+- **Installation/File Activity** (`18:41Z - 18:52Z`): The process began with the download of the portable TOR Browser installer at `18:41:40.000Z`. This installer was executed silently (`/S` flag) at `18:52:18.000Z`, leading to the creation of the TOR Browser files on the Desktop.
+- **Execution and Session Start** (`18:53Z - 18:55Z`): The TOR Browser application (`firefox.exe`) was launched at `18:53:25Z`, followed almost immediately by the TOR service (`tor.exe`) at `18:54:22Z`. The browser component then connected to the local TOR service over the standard control port `9151` and SOCKS port `9150`, confirming the application was successfully initiating the TOR connection.
+- **External TOR Network Connection** (`18:55Z`): The `tor.exe` process successfully established outgoing connections to public TOR relay nodes on the dedicated TOR communication port `9001` (IPs `177.100.214.111` and `88.99.27.141`). This event confirms the user was actively connected to and routing traffic through the TOR network.
+- **Web Activity** (`18:55Z`): Immediately after connecting to a TOR relay, the user visited at least three different websites over HTTPS (port `443`). The URLs, such as `https://www.nwdnnh34xcrrczd7.com`, are typical of onion-based or TOR-proxied traffic, suggesting the user was accessing sites through the anonymity network.
+- **Anomalous File Creation** (`19:21Z`): At `19:21:13Z`, well into the session, a file named `tor-shopping-list.txt` was created on the desktop, which is a file of interest identified by the threat hunter.
+- **Second Session** (`19:24Z`): A second, distinct launch of the TOR service (`tor.exe`) and subsequent connection by the browser component to the local ports `9151` and `9150` occurred at `19:24:37Z` and `19:24:40Z`, respectively, indicating a possible relaunch or new browsing session.
 
 ---
 
 ## Summary
 
-On October 23, 2025, user azurelinko successfully downloaded, silently installed, and intentionally used the Tor Browser on the corporate device og-vm-mde9. The activity, beginning at 18:41 UTC, quickly escalated to external connections with Tor relays on port 9001 and included encrypted web traffic (port 443) to sites consistent with Tor network usage. The user created a file named tor-shopping-list.txt on the desktop at 19:21 UTC, confirming active engagement within the anonymous network environment. This event confirms a violation of policy involving the use of anonymity software.
+On October 23, 2025, user azurelinko successfully downloaded, silently installed, and intentionally used the TOR Browser on the corporate device "og-vm-mde9". The activity, beginning at `18:41 UTC`, quickly escalated to external connections with TOR relays on port `9001` and included encrypted web traffic (port `443`) to sites consistent with TOR network usage. The user created a file named `tor-shopping-list.txt` on the desktop at `19:21 UTC`, confirming active engagement within the anonymous network environment. This event confirms a violation of policy involving the use of anonymity software.
 
 ---
 
 ## Response Taken
 
-TOR usage was confirmed on endpoint og-vm-mde9 by the user azurelinko. The device was isolated and the user's direct manager was notified.
+TOR usage was confirmed on endpoint "og-vm-mde9" by the user "azurelinko". The device was isolated and the user's direct manager was notified.
 
 ---
