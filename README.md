@@ -122,7 +122,7 @@ DeviceNetworkEvents
 - **`2025-10-23 18:55:35.000Z`:** TOR Browser (firefox.exe) established connection to local TOR SOCKS port `9150` at IP: `127.0.0.1:9150`
 - **`2025-10-23 18:57:29.000Z`:** TOR Browser (firefox.exe) established connection to local TOR SOCKS port `9150` at IP: `127.0.0.1:9150`
 - **`2025-10-23 19:21:13.396Z`:** File `tor-shopping-list.txt` created on the desktop. This file creation marks the end of the initial file activity.
-- **`2025-10-23 19:24:37.000Z`:** TOR service process created. File: `tor.exe` (Possible relaunch/new session) at File Path: `C:\Users\azurelinko\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe`
+- **`2025-10-23 19:24:37.000Z`:** TOR service process created File: `tor.exe` (Possible relaunch/new session) at File Path: `C:\Users\azurelinko\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe`
 - **`2025-10-23 19:24:40.000Z`:** TOR Browser (`firefox.exe`) established connection to local TOR control port `9151` at IP: `127.0.0.1:9151`
 
 ---
