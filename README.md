@@ -25,7 +25,7 @@ Management suspects that some employees may be using TOR browsers to bypass netw
 
 ### 1. Searched the `DeviceFileEvents` Table
 
-Searched the DeviceFileEvents table for any file that had the string “tor” in it and discovered what looks to be the user “azurelinko” downloaded a TOR installer and did something that resulted in many TOR-related files being copied to the desktop and the creation of a file called “tor-shopping-list.txt” on the desktop at `2025-10-23T19:21:13.3960656Z`. These events began at: 2025-10-23T18:41:40.0019389Z
+Searched the DeviceFileEvents table for any file that had the string “tor” in it and discovered what looks to be the user “azurelinko” downloaded a TOR installer and did something that resulted in many TOR-related files being copied to the desktop and the creation of a file called `tor-shopping-list.txt` on the desktop at `2025-10-23T19:21:13.3960656Z`. These events began at: `2025-10-23T18:41:40.0019389Z`
 
 **Query used to locate events:**
 
@@ -44,7 +44,7 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched the DeviceProcessEvents table for any ProcessCommandLine that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at 2025-10-23T18:52:18.6823948Z, A user named azurelinko executed the installer for the Tor Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
+Searched the `DeviceProcessEvents` table for any `ProcessCommandLine` that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at `2025-10-23T18:52:18.6823948Z`, A user named azurelinko executed the installer `tor-browser-windows-x86_64-portable-14.0.1.exe` for the Tor Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
 
 **Query used to locate event:**
 
