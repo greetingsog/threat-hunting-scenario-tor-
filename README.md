@@ -44,7 +44,7 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched the `DeviceProcessEvents` table for any `ProcessCommandLine` that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at `2025-10-23T18:52:18.6823948Z`, A user named azurelinko executed the installer `tor-browser-windows-x86_64-portable-14.5.8.exe` for the TOR Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
+Searched the `DeviceProcessEvents` table for any `ProcessCommandLine` that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at `2025-10-23T18:52:18.6823948Z`, A user named "azurelinko" executed the installer `tor-browser-windows-x86_64-portable-14.5.8.exe` for the TOR Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
 
 **Query used to locate event:**
 
@@ -63,7 +63,7 @@ DeviceProcessEvents
 
 Searched the `DeviceProcessEvents` table for any indication that the user “azurelinko” opened the TOR browser. There was evidence that they did open at `2025-10-23T18:53:25.9192101Z`.
 
-There were several other instances of `Firefox.exe` (TOR) as well as `tor.exe` spawned afterwards. 
+There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards. 
 
 **Query used to locate events:**
 
@@ -84,9 +84,9 @@ DeviceProcessEvents
 
 Searched `DeviceNetworkEvents` table for any indication that the TOR Browser was used to establish an outgoing connection over commonly known and used TOR ports (`9150`, `9151`, `9050`, `9001`, `9030`). 
 
-At `2025-10-23T18:54:25.0505537Z`, the account azurelinko on the device "og-vm-mde9" initiated the TOR Browser's custom version of Firefox (`firefox.exe`). This program successfully established a connection to the local machine (`127.0.0.1`) on the dedicated TOR control port `9151`. This action confirms that the Firefox component was connecting to and preparing to manage the local TOR service, which is a signature step in starting the TOR Browser Bundle.
+At `2025-10-23T18:54:25.0505537Z`, the account "azurelinko" on the device "og-vm-mde9" initiated the TOR Browser's custom version of Firefox (`firefox.exe`). This program successfully established a connection to the local machine (`127.0.0.1`) on the dedicated TOR control port `9151`. This action confirms that the Firefox component was connecting to and preparing to manage the local TOR service, which is a signature step in starting the TOR Browser Bundle.
 
-At `2025-10-23T18:55:23.1560397Z`, the user account azurelinko on the device "og-vm-mde9" ran the TOR anonymity program (`tor.exe`) directly from their desktop. The program successfully established a connection to a public TOR relay node located at the IP address `88.99.27.141` using the dedicated TOR communication port `9001`. This log confirms the intentional and successful use of the TOR network by the user. There were a couple other connections to sites over port `443`.
+At `2025-10-23T18:55:23.1560397Z`, the user account "azurelinko" on the device "og-vm-mde9" ran the TOR anonymity program (`tor.exe`) directly from their desktop. The program successfully established a connection to a public TOR relay node located at the IP address `88.99.27.141` using the dedicated TOR communication port `9001`. This log confirms the intentional and successful use of the TOR network by the user. There were a couple other connections to sites over port `443`.
 
 **Query used to locate events:**
 
@@ -141,7 +141,7 @@ The threat hunt successfully documented the full lifecycle of TOR Browser usage 
 
 ## Summary
 
-On October 23, 2025, user azurelinko successfully downloaded, silently installed, and intentionally used the TOR Browser on the corporate device "og-vm-mde9". The activity, beginning at `18:41 UTC`, quickly escalated to external connections with TOR relays on port `9001` and included encrypted web traffic (port `443`) to sites consistent with TOR network usage. The user created a file named `tor-shopping-list.txt` on the desktop at `19:21 UTC`, confirming active engagement within the anonymous network environment. This event confirms a violation of policy involving the use of anonymity software.
+On October 23, 2025, user "azurelinko" successfully downloaded, silently installed, and intentionally used the TOR Browser on the corporate device "og-vm-mde9". The activity, beginning at `18:41 UTC`, quickly escalated to external connections with TOR relays on port `9001` and included encrypted web traffic (port `443`) to sites consistent with TOR network usage. The user created a file named `tor-shopping-list.txt` on the desktop at `19:21 UTC`, confirming active engagement within the anonymous network environment. This event confirms a violation of policy involving the use of anonymity software.
 
 ---
 
