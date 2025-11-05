@@ -44,7 +44,7 @@ DeviceFileEvents
 
 ### 2. Searched the `DeviceProcessEvents` Table
 
-Searched the `DeviceProcessEvents` table for any `ProcessCommandLine` that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at `2025-10-23T18:52:18.6823948Z`, A user named azurelinko executed the installer `tor-browser-windows-x86_64-portable-14.0.1.exe` for the Tor Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
+Searched the `DeviceProcessEvents` table for any `ProcessCommandLine` that contained the string “tor-browser-windows-x86_64-portable-14.5.8.exe”. Based on the log returned at `2025-10-23T18:52:18.6823948Z`, A user named azurelinko executed the installer `tor-browser-windows-x86_64-portable-14.5.8.exe` for the Tor Browser on the virtual machine “og-vm-mde9”, launching the installation silently from their Downloads folder.
 
 **Query used to locate event:**
 
@@ -61,9 +61,9 @@ DeviceProcessEvents
 
 ### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 
-Searched the DeviceProcessEvents table for any indication that the user “azurelinko” opened the tor browser. There was evidence that they did open at 2025-10-23T18:53:25.9192101Z
+Searched the `DeviceProcessEvents` table for any indication that the user “azurelinko” opened the TOR browser. There was evidence that they did open at `2025-10-23T18:53:25.9192101Z`.
 
-There were several other instances of Firefox.exe (Tor) as well as tor.exe spawned afterwards. 
+There were several other instances of `Firefox.exe` (TOR) as well as `tor.exe` spawned afterwards. 
 
 **Query used to locate events:**
 
@@ -82,11 +82,11 @@ DeviceProcessEvents
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
-Searched DeviceNetworkEvents table for any indication that the Tor Browser was used to establish an outgoing connection over commonly known and used Tor ports ("9150", "9151", "9050", "9001", “9030”). 
+Searched `DeviceNetworkEvents` table for any indication that the TOR Browser was used to establish an outgoing connection over commonly known and used TOR ports (`9150`, `9151`, `9050`, `9001`, `9030`). 
 
-At 2025-10-23T18:54:25.0505537Z, the employee account azurelinko on the device og-vm-mde9 initiated the Tor Browser's custom version of Firefox (firefox.exe). This program successfully established a connection to the local machine (127.0.0.1) on the dedicated Tor control port 9151. This action confirms that the Firefox component was connecting to and preparing to manage the local Tor service, which is a signature step in starting the Tor Browser Bundle.
+At `2025-10-23T18:54:25.0505537Z`, the account azurelinko on the device "og-vm-mde9" initiated the TOR Browser's custom version of Firefox (`firefox.exe`). This program successfully established a connection to the local machine (`127.0.0.1`) on the dedicated TOR control port `9151`. This action confirms that the Firefox component was connecting to and preparing to manage the local TOR service, which is a signature step in starting the TOR Browser Bundle.
 
-At 2025-10-23T18:55:23.1560397Z, the user account azurelinko on the device og-vm-mde9 ran the Tor anonymity program (tor.exe) directly from their desktop. The program successfully established a connection to a public Tor relay node located at the IP address 88.99.27.141 using the dedicated Tor communication port 9001. This log confirms the intentional and successful use of the Tor network by the user. There were a couple other connections to sites over port 443.
+At `2025-10-23T18:55:23.1560397Z`, the user account azurelinko on the device "og-vm-mde9" ran the TOR anonymity program (`tor.exe`) directly from their desktop. The program successfully established a connection to a public TOR relay node located at the IP address `88.99.27.141` using the dedicated TOR communication port `9001`. This log confirms the intentional and successful use of the TOR network by the user. There were a couple other connections to sites over port `443`.
 
 **Query used to locate events:**
 
@@ -105,7 +105,7 @@ DeviceNetworkEvents
 
 ## Detailed Chronological Events Timeline
 
-- **2025-10-23 18:41:40.000Z:** Tor Browser installer file created (Downloaded). File: tor-browser-windows-x86_64-portable-14.5.8.exe - Path: C:\Users\azurelinko\Downloads\tor-browser-windows-x86_64-portable-14.5.8.exe, SHA256: 42175e455f814e5a691195c92df92695f68bca451af53ae405d7a5129898ad89
+- **`2025-10-23 18:41:40.000Z`:** Tor Browser installer file created (Downloaded). File: tor-browser-windows-x86_64-portable-14.5.8.exe - Path: C:\Users\azurelinko\Downloads\tor-browser-windows-x86_64-portable-14.5.8.exe, SHA256: 42175e455f814e5a691195c92df92695f68bca451af53ae405d7a5129898ad89
 - **2025-10-23 18:52:18.000Z:** Tor Browser installer executed silently. File: tor-browser-windows-x86_64-portable-14.5.8.exe - Command Line: tor-browser-windows-x86_64-portable-14.5.8.exe /S, Path: C:\Users\azurelinko\Downloads\tor-browser-windows-x86_64-portable-14.5.8.exe
 - **2025-10-23 18:53:25.000Z:** Tor Browser (firefox.exe) initial process created/launched by user azurelinko. - Path: C:\Users\azurelinko\Desktop\Tor Browser\Browser\firefox.exe, Command Line: firefox.exe
 - **2025-10-23 18:54:22.000Z:** Tor service process created. File: tor.exe - Path: C:\Users\azurelinko\Desktop\Tor Browser\Browser\TorBrowser\Tor\tor.exe
